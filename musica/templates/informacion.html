@@ -5,8 +5,8 @@
 </head> <body>
     <h1>Artistas</h1>
     <ul>
-        {%for artistas in artists}
-        <li>{{ artistas['Name']}}</li>
-        {%andfor}
+        {% for art in artistas %}
+        <li>{{ art['Name']}}</li>
+        {% endfor %}
     </ul>
 </body></html>
