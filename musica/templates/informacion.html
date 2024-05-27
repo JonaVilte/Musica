@@ -1,12 +1,8 @@
-<!DOCTYPE html></html><head>
-    <title>Lista de artistas</title>
-    <link rel="stylesheet" type="texte/css" 
-    href="{{ url_for('static', filename= 'style.css')}}">
-</head> <body>
-    <h1>Artistas</h1>
-    <ul>
-        {% for art in artistas %}
-        <li>{{ art['Name']}}</li>
-        {% endfor %}
-    </ul>
-</body></html>
+{% extends "base.html" %} {% block title %}Lista de artistas{% endblock %} {%
+block header %}Artistas{% endblock %} {% block cuerpo %}
+<ul>
+  {% for art in artistas %}
+  <li>{{ art['Name']}}</li>
+  {% endfor %}
+</ul>
+{% endblock %}
