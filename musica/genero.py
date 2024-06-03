@@ -8,7 +8,7 @@ def generos():
     base_de_datos = db.get_db()
     consulta = """
         SELECT name, genreId FROM genres
-        ORDER BY genres ASC	 
+        ORDER BY genreId ASC	 
         """
     resultado = base_de_datos.execute(consulta)
     lista_de_resultados = resultado.fetchall()
@@ -26,9 +26,14 @@ def detalle(id):
     genero = resultado.fetchone()
 
     consulta2 = """
+        SELECT c.name from genres t
+        JOIN tracks c on t.GenreId = c.GenreId
+        WHERE t.GenreId	= ?
         """
 
     resultado = base_de_datos.execute(consulta, (id,))
+    genero = resultado.fetchone()
+    resultado = base_de_datos.execute(consulta2, (id,))
     lista_de_resultados = resultado.fetchall()
     pagina = render_template("detalle_genero.html", genero=genero,
                                         canciones=lista_de_resultados)
