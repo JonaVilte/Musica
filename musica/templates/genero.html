@@ -1,7 +1,7 @@
 {% extends "base.html" %} {% block title %}Lista de Generos{% endblock %} {%
 block header %}Generos{% endblock %} {% block cuerpo %}
 <ul>
-  {% for gen in genero %}
+  {% for gen in generos %}
   <li>{{ gen['Name']}}</li>
   {% endfor %}
 </ul>
