@@ -12,6 +12,6 @@ def artistas():
  
     resultado = base_de_datos.execute(consulta)
     lista_de_resultados = resultado.fetchall()
-    pagina = render_template("informacion.html", artistas=lista_de_resultados)
+    pagina = render_template("artista.html", artistas=lista_de_resultados)
     return pagina
 

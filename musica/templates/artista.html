@@ -2,7 +2,9 @@
 block header %}Artistas{% endblock %} {% block cuerpo %}
 <ul>
   {% for art in artistas %}
-  <li>{{ art['Name']}}</li>
+  <li>
+    <a href="detalle_album.html"> {{ art['Name']}} </a>
+  </li>
   {% endfor %}
 </ul>
 {% endblock %}
