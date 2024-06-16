@@ -16,3 +16,24 @@ def album():
     lista_de_resultados = resultado.fetchall()
     pagina = render_template("album.html", albunes=lista_de_resultados)
     return pagina
+
+@bp.route('/<int:id>')
+def albunes():
+    baseDeDatos = db.get_db()
+    consulta1 = """
+        SELECT Title, AlbumId FROM albums
+        WHERE AlbumId = ? ;
+        """
+    consulta2 = """
+    SELECT t.Title,r.name, t.AlbumId FROM albums t
+    JOIN tracks r on t.AlbumId = r.AlbumId
+    WHERE t.AlbumId = 6 ;
+    """
+    resultado = base_de_datos.execute(consulta1, (id,))
+    track = resultado.fetchone()
+    resultado = base_de_datos.execute(consulta2, (id,))
+    lista_de_resultados = resultado.fetchall()
+    pagina = render_template("detalle_album.html", 
+                                        cancion=track,
+                                        canciones=lista_de_resultados)
+    return pagina
