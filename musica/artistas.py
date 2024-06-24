@@ -23,7 +23,7 @@ def detalle(id):
         WHERE ArtistId = ? ;
     """
     consulta2 = """
-        SELECT a.name, g.Title FROM albums g
+        SELECT a.name, g.Title, g.AlbumId FROM albums g
         JOIN artists a ON g.ArtistId = a.ArtistId
         WHERE a.ArtistId = ? ;
     """

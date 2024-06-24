@@ -10,11 +10,15 @@ with app.app_context():
 def hello():
     return 'Hello, World!'
 
-from . import artista
-app.register_blueprint(artista.bp)
+from . import artistas
+app.register_blueprint(artistas.bp)
 
 from . import genero
 app.register_blueprint(genero.bp)
 
 from . import album
 app.register_blueprint(album.bp)
+
+from . import canciones
+app.register_blueprint(canciones.bp)
+

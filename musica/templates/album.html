@@ -2,7 +2,11 @@
 {%block header %}Albunes{% endblock %} {% block cuerpo %}
 <ul>
   {% for alb in albunes %}
-  <li>{{ alb['Title']}}</li>
+  <li>
+    <a href="{{ url_for('album.albunes', id=alb ['AlbumId']) }}">
+      {{ alb["Title"]}}
+    </a>
+  </li>
   {% endfor %}
 </ul>
 {% endblock %}

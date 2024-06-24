@@ -1,18 +1,19 @@
-<!DOCTYPE html><html><head>
+<!DOCTYPE html>
+<html>
+  <head>
     <title>Detalle del artista</title>
-    <link rel="stylesheet" type="text/css">
-
-</head><body>
-
+    <link rel="stylesheet" type="text/css" />
+  </head>
+  <body>
     <h1>artista {{ artista["Name"]}}</h1>
 
     <h1>Albums</h1>
     <ul>
-        {% for album in albums %}
-                <a href="{{ url_for('album.detalle_album', id=album['g.AlbumId']) }}">
-                <li>{{ album["Title"] }}</li>
-            </a>
-        {% endfor %}
+      {% for album in albums %}
+      <a href="{{ url_for('album.albunes', id=album['AlbumId']) }}">
+        <li>{{ album["Title"] }}</li>
+      </a>
+      {% endfor %}
     </ul>
-    
-</body></html>
+  </body>
+</html>
