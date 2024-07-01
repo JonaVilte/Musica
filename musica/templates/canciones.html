@@ -1,0 +1,12 @@
+{% extends "base.html" %} {% block title %}Lista de artistas{% endblock %} {%
+block header %}Genero{% endblock %} {% block cuerpo %}
+<ul>
+  {% for gene in genero %}
+  <li>
+    <a href="{{ url_for('genero.detalle', id=gene['GenreId']) }}">
+      {{ gene["Name"] }}
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}
