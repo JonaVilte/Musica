@@ -3,7 +3,7 @@ block header %}Generos{% endblock %} {% block cuerpo %}
 <ul>
   {% for gen in generos %}
   <li>
-    <a href="{{url_for('genero.detalle', id=generos[GenreId])}}">
+    <a href="{{url_for('genero.generos', id=generos[GenreId])}}">
       {{ gen['Name']}}
     </a>
   </li>
