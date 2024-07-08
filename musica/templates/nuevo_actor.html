@@ -1,0 +1,9 @@
+{% extends "base.html" %} {% block title %}Lista de artistas{% endblock %} {%
+block header %}Artistas{% endblock %} {% block cuerpo %}
+<form method="POST">
+  <label for="name">Nombre</label>
+  <input type="text" name="name" id="name" />
+  <br />
+  <input type="submit" value="Guardar" />
+</form>
+{% endblock %}
